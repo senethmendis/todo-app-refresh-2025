@@ -7,9 +7,9 @@ export const addNewNote = async (noteName, note) => {
     .insert([{ note_title: noteName, note_description: note }]);
   if (error) {
     console.error("Insert error:", error);
-    toast.success("Faild to add data !", { theme: "colored" });
+    toast.error("Faild to add data !", { theme: "colored" });
   } else {
-    toast.error("Note Added !");
+    toast.success("Note Added !");
     console.log("Inserted data:", data);
   }
 };

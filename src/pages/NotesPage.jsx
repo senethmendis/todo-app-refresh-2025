@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../services/supabaseConfig";
-import { NoteRow } from "../components";
+import { NoNotesFound, NoteRow } from "../components";
 
 const NotesPage = () => {
   const [noteData, setNoteData] = useState([]);
@@ -23,18 +23,20 @@ const NotesPage = () => {
     <div className="w-[1250px] mx-auto">
       <h1 className="text-4xl font-bold">All Notes</h1>
 
-      <p>{noteData.length}</p>
-
-      <div className="w-full h-screen  flex flex-col mt-20 px-5 ">
-        {noteData?.map((note, i) => (
-          <NoteRow
-            key={i}
-            title={note?.note_title}
-            description={note?.note_description}
-            time={note?.created_at}
-          />
-        ))}
-      </div>
+      {noteData?.length === 0 ? (
+        <NoNotesFound />
+      ) : (
+        <div className="w-full h-screen  flex flex-col mt-20 px-5 ">
+          {noteData?.map((note, idx) => (
+            <NoteRow
+              key={idx}
+              title={note?.note_title}
+              description={note?.note_description}
+              time={note?.created_at}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
