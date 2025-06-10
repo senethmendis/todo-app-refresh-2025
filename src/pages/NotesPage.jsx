@@ -23,13 +23,17 @@ const NotesPage = () => {
     <div className="w-[1250px] mx-auto">
       <h1 className="text-4xl font-bold">All Notes</h1>
 
+      {JSON.stringify(noteData, null, 2)}
+
       {noteData?.length === 0 ? (
         <NoNotesFound />
       ) : (
-        <div className="w-full h-screen  flex flex-col mt-20 px-5 ">
+        <div className="w-full h-screen  flex flex-col my-20 px-5 ">
           {noteData?.map((note, idx) => (
             <NoteRow
+              fetchData={fetchData}
               key={idx}
+              idx={note?.id}
               title={note?.note_title}
               description={note?.note_description}
               time={note?.created_at}
