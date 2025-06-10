@@ -23,8 +23,6 @@ const NotesPage = () => {
     <div className="w-[1250px] mx-auto">
       <h1 className="text-4xl font-bold">All Notes</h1>
 
-      {JSON.stringify(noteData, null, 2)}
-
       {noteData?.length === 0 ? (
         <NoNotesFound />
       ) : (

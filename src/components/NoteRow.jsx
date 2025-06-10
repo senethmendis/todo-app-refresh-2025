@@ -2,6 +2,7 @@ import { Calendar1, Ellipsis, SquarePen, Trash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "../services";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const NoteRow = ({ title, description, time, idx, fetchData }) => {
   const [hidePopUp, setHidePopUp] = useState(true);
@@ -70,9 +71,9 @@ const NoteRow = ({ title, description, time, idx, fetchData }) => {
         </div>
       </div>
       {/* body of the note */}
-      <div className="w-full py-3 px-2">
+      <Link to={`${idx}`} className="w-full py-3 px-2">
         <h3 className="text-wrap text-xl">{wordLimit(description)}</h3>
-      </div>
+      </Link>
       {/* popup */}
       <div
         ref={popupRef}
