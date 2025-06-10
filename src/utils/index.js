@@ -28,3 +28,19 @@ export const formatDate = (dateString) => {
 
   return `${day} ${month} ${year} ${hours}:${minutes} ${ampm}`;
 };
+
+export const splitDateAndTime = (date) => {
+  const newString = date.split("T");
+  const humanDate = newString[0];
+  const time = newString[1];
+  return { humanDate, time };
+};
+
+export const wordLimit = (des) => {
+  const words = des.match(/\b\w+\b/g) || [];
+  if (words.length > 65) {
+    return words.slice(0, 65).join(" ") + "...";
+  } else {
+    return des;
+  }
+};

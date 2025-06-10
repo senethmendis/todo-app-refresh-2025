@@ -5,7 +5,6 @@ const HomePage = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const handleOnSubmit = (formData) => {
-    console.log(formData);
     addNewNote(formData.noteName, formData.note);
     reset();
   };

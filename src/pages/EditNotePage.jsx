@@ -4,41 +4,60 @@ import { useForm } from "react-hook-form";
 import { Link, useParams } from "react-router-dom";
 import { supabase } from "../services";
 import { formatDate } from "../utils";
+import { toast } from "react-toastify";
 
 const EditNotePage = () => {
   const { id } = useParams();
-  const { register, handleSubmit, reset } = useForm();
   const [date, setDate] = useState("");
+  const { register, handleSubmit, reset } = useForm();
+
+  const fetchData = async (idx) => {
+    const { data, error } = await supabase
+      .from("notes")
+      .select("*")
+      .eq("id", idx)
+      .single();
+
+    if (error) {
+      console.log(error, "some Error");
+      return;
+    }
+
+    const obj = {
+      noteName: data?.note_title,
+      note: data?.note_description,
+    };
+    setDate(data?.created_at);
+    reset(obj);
+  };
 
   useEffect(() => {
-    const fetchData = async (idx) => {
-      const { data, error } = await supabase
-        .from("notes")
-        .select("*")
-        .eq("id", idx)
-        .single();
-
-      if (error) {
-        console.log(error, "some Error");
-        return;
-      }
-
-      const obj = {
-        noteName: data?.note_title,
-        note: data?.note_description,
-      };
-      setDate(data?.created_at);
-      reset(obj);
-    };
     fetchData(id);
   }, [id, reset]);
 
+  const updateNoteById = async ({ idx, values }) => {
+    const { data, error } = await supabase
+      .from("notes")
+      .update({ note_title: values?.noteName, note_description: values?.note })
+      .eq("id", idx)
+      .select();
+
+    if (error) {
+      toast.error("Field to update note!");
+      console.log(error);
+    } else {
+      toast.success("Note Updated!");
+      fetchData(id);
+    }
+  };
+
   const handleOnSubmit = (formData) => {
     console.log(formData);
+    updateNoteById({ idx: id, values: formData });
   };
 
   return (
-    <div className="w-[1250px] h-screen mx-auto">
+    <div className="w-[1250px] overflow-hidden h-screen mx-auto">
       <form
         onSubmit={handleSubmit(handleOnSubmit)}
         className="w-full h-auto flex flex-col"
@@ -47,7 +66,7 @@ const EditNotePage = () => {
           <div>
             <input
               {...register("noteName", { required: true })}
-              className="h-auto py-1 border text-3xl border-black/20 max-w-[600px] w-full rounded-md px-3 outline-black/20"
+              className="h-auto py-1 border font-bold text-3xl border-black/20 max-w-[600px] w-full rounded-md px-3 outline-black/20"
               placeholder="Title"
             />
 

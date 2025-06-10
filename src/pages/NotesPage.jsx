@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../services/supabaseConfig";
-import { NoNotesFound, NoteRow, Skeleton } from "../components";
+import { NoteRow, Skeleton } from "../components";
 
 const NotesPage = () => {
   const [noteData, setNoteData] = useState([]);

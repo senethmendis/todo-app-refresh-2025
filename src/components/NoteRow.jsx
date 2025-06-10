@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { supabase } from "../services";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { formatDate, wordLimit } from "../utils";
 
 const NoteRow = ({ title, description, time, idx, fetchData }) => {
   const [hidePopUp, setHidePopUp] = useState(true);
@@ -36,20 +37,6 @@ const NoteRow = ({ title, description, time, idx, fetchData }) => {
     };
   }, [hidePopUp]);
 
-  const splitDate = (date) => {
-    const newString = date.split("T");
-    return newString[0];
-  };
-
-  const wordLimit = (des) => {
-    const words = des.match(/\b\w+\b/g) || [];
-    if (words.length > 65) {
-      return words.slice(0, 65).join(" ") + "...";
-    } else {
-      return des;
-    }
-  };
-
   return (
     <div className="w-full bg-white shadow p-4 rounded-2xl mb-5 relative hover:scale-[101%] transition-all ease-in-out">
       <div className="flex gap-2.5 items-center">
@@ -67,7 +54,7 @@ const NoteRow = ({ title, description, time, idx, fetchData }) => {
               <Ellipsis className="text-gray-400" />
             </div>
           </div>
-          <span className="text-gray-500 text-">{splitDate(time)}</span>
+          <span className="text-gray-500 text-">{formatDate(time)}</span>
         </div>
       </div>
       {/* body of the note */}
