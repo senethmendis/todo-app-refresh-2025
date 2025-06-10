@@ -21,19 +21,19 @@ const NotesPage = () => {
 
   return (
     <div className="w-[1250px] mx-auto">
-      <h1 className="text-4xl font-bold ">All Notes</h1>
+      <h1 className="text-4xl font-bold">All Notes</h1>
 
-      <p>{JSON.stringify(noteData, null, 2)}</p>
+      <p>{noteData.length}</p>
 
-      <div className="w-full h-screen overflow-y-auto overflow-x-hidden flex flex-col mt-10 px-5">
-        <NoteRow />
-        <NoteRow />
-        <NoteRow />
-        <NoteRow />
-        <NoteRow />
-        <NoteRow />
-        <NoteRow />
-        <NoteRow />
+      <div className="w-full h-screen  flex flex-col mt-20 px-5 ">
+        {noteData?.map((note, i) => (
+          <NoteRow
+            key={i}
+            title={note?.note_title}
+            description={note?.note_description}
+            time={note?.created_at}
+          />
+        ))}
       </div>
     </div>
   );

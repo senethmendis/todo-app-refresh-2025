@@ -1,7 +1,7 @@
 import { Calendar1, Ellipsis, Turtle } from "lucide-react";
 import { useState } from "react";
 
-const NoteRow = () => {
+const NoteRow = ({ title, description, time }) => {
   const [hidePopUp, setHidePopUp] = useState(true);
 
   return (
@@ -11,23 +11,24 @@ const NoteRow = () => {
           <Calendar1 size={50} />
           <div className="w-full">
             <div className="w-full flex flex-row justify-between">
-              <h1 className="text-2xl font-bold ">Title</h1>
-              <Ellipsis onClick={() => setHidePopUp((prev) => !prev)} />
+              <h1 className="text-2xl font-bold ">{title}</h1>
+              <div
+                onClick={() => setHidePopUp((prev) => !prev)}
+                className="w-[40px] h-[40px] bg-gray-100/80 hover:bg-gray-200/70
+               flex justify-center items-center rounded-full"
+              >
+                <Ellipsis className="text-gray-400" />
+              </div>
             </div>
-            <span className="text-gray-500 text-">13:45</span>
+            <span className="text-gray-500 text-">{time}</span>
           </div>
         </div>
         {/* body of the note */}
         <div className="w-full py-3 px-2">
-          <h3 className="text-wrap text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ab
-            consequuntur accusamus commodi perspiciatis delectus perferendis?
-            Autem, iste, quam aut eum soluta minima dolore possimus culpa
-            ducimus, laboriosam necessitatibus enim.
-          </h3>
+          <h3 className="text-wrap text-xl">{description}</h3>
         </div>
         <div
-          className={`absolute z-50 bg-red-500 w-[100px] h-[150px] rounded-2xl right-10 top-8 ${
+          className={`absolute z-50 bg-white border border-black/10 w-[100px] h-[150px] rounded-2xl right-10 top-8 ${
             hidePopUp && "hidden"
           }`}
         ></div>
