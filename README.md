@@ -1,12 +1,47 @@
-# React + Vite
+# 📝 Note Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Note Web App** is a simple and intuitive web-based application built with **React** for managing personal notes. You can create, update, and organize your notes efficiently with a clean and responsive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🧾 Create and save new notes with a title and content
+- ✏️ Edit existing notes
+- 🧹 Clear/reset form fields
+- ✅ Form validation with `react-hook-form`
+- 🖼️ Clean and modern UI with Tailwind CSS (or your preferred styling)
+- 🧭 Routing with React Router
+- 🎨 Icons via Lucide React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧰 Tech Stack
+
+- **Frontend:** React, Tailwind CSS
+- **Forms:** React Hook Form
+- **Routing:** React Router
+- **Icons:** Lucide React
+
+---
+
+## 📁 Project Structure
+
+src/
+├── components/
+│   └── [Reusable Components]
+├── pages/
+│   ├── EditNotePage.jsx
+│   └── CreateNotePage.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/note-web-app.git
+cd note-web-app
+
+
+
