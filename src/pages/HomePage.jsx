@@ -5,15 +5,16 @@ const HomePage = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const handleOnSubmit = (formData) => {
+
     addNewNote(formData.noteName, formData.note);
     reset();
   };
 
   return (
-    <div className="w-[1250px] mx-auto">
+    <div className="w-[1250px] flex gap-3 mx-auto">
       <form
         onSubmit={handleSubmit(handleOnSubmit)}
-        className="flex flex-col gap-4 items-start w-[600px] bg-gray-200 border border-black/10 shadow-2xl p-5 rounded-2xl"
+        className="flex flex-col gap-4 items-start w-1/2 bg-gray-100 border border-black/10 shadow-2xl p-5 rounded-2xl"
       >
         <h1 className="text-3xl font-bold">Add Note Here</h1>
         <input
@@ -41,6 +42,9 @@ const HomePage = () => {
           </button>
         </div>
       </form>
+      <div className="w-1/2 h-auto">
+       
+      </div>
     </div>
   );
 };

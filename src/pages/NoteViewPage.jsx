@@ -67,21 +67,50 @@ export default NoteViewPage;
 
 const NoteHead = () => {
   return (
-    <div className="w-auto flex flex-col gap-2">
-      <div className="w-[200px] h-[20px] bg-gray-300/50 rounded-3xl animate-pulse transition-all ease-in-out"></div>
-      <div className="w-[100px] h-[20px] bg-gray-300/50 rounded-3xl animate-pulse transition-all ease-in-out"></div>
+    <div className="w-auto flex flex-col gap-4">
+      <div className="w-[200px] h-3 bg-gray-300/50 rounded-3xl animate-pulse transition-all ease-in-out"></div>
+      <div className="w-[100px] h-3 bg-gray-300/50 rounded-3xl animate-pulse transition-all ease-in-out"></div>
     </div>
   );
 };
 
-const NoteBody = () => {
+const NoteBody = ({ color = "bg-gray-300/50" }) => {
   return (
-    <div className="w-full flex flex-col justify-between h-[150px]">
-      <div className="w-[800px]  h-3 bg-gray-200 animate-pulse shadow  rounded-2xl   transition-all ease-in-out" />
-      <div className="w-[600px]  h-3 bg-gray-200 animate-pulse shadow  rounded-2xl   transition-all ease-in-out" />
-      <div className="w-[400px]  h-3 bg-gray-200 animate-pulse shadow  rounded-2xl   transition-all ease-in-out" />
-      <div className="w-[500px]  h-3 bg-gray-200 animate-pulse shadow  rounded-2xl   transition-all ease-in-out" />
-      <div className="w-[700px]  h-3 bg-gray-200 animate-pulse shadow  rounded-2xl   transition-all ease-in-out" />
+    <div className="w-full flex flex-col justify-between h-[150px] my-5">
+      <div className="w-[800px] flex flex-col gap-6 py-3 px-2">
+        <div className="w-full flex flex-row gap-4">
+          <div
+            className={`w-[700px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+          <div
+            className={`w-[300px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+        </div>
+        <div className="w-full flex flex-row gap-4">
+          <div
+            className={`w-[500px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+          <div
+            className={`w-[500px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+        </div>
+        <div className="w-full justify-between flex flex-row gap-4">
+          <div
+            className={`w-[700px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+          <div
+            className={`w-[450px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+        </div>
+        <div className="w-full flex flex-row gap-4">
+          <div
+            className={`w-[500px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+          <div
+            className={`w-[500px] h-[13px]  rounded-3xl animate-pulse transition-all ease-in-out ${color}`}
+          />
+        </div>
+      </div>
     </div>
   );
 };

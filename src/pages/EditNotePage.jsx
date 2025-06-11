@@ -62,11 +62,11 @@ const EditNotePage = () => {
         onSubmit={handleSubmit(handleOnSubmit)}
         className="w-full h-auto flex flex-col"
       >
-        <div className=" max-w-[800px] w-full flex flex-row justify-between items-center">
+        <div className=" max-w-[1000px] w-full flex flex-row justify-between items-center">
           <div>
             <input
               {...register("noteName", { required: true })}
-              className="h-auto py-1 border font-bold text-3xl border-black/20 max-w-[600px] w-full rounded-md px-3 outline-black/20"
+              className="h-auto py-1 border font-bold text-3xl border-black/20 max-w-[800px] w-full rounded-md px-3 outline-black/20"
               placeholder="Title"
             />
 
@@ -76,7 +76,7 @@ const EditNotePage = () => {
 
         <textarea
           {...register("note", { required: true })}
-          className="max-w-[800px] w-ful text-justifyl text-2xl mt-5 rounded-md h-[300px] max-h[500px] border border-black/20 p-3 outline-black/20"
+          className="max-w-[1000px] w-ful text-justifyl text-2xl mt-5 rounded-md h-[300px] max-h[500px] border border-black/20 p-3 outline-black/20"
           placeholder="Discription"
         ></textarea>
         <div className="flex w-full gap-4 mt-5">

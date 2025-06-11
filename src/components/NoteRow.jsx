@@ -24,7 +24,7 @@ const NoteRow = ({ title, description, time, idx, fetchData }) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
-        setHidePopUp(true); // Close the popup if clicked outside
+        setHidePopUp(true); 
       }
     };
 
@@ -57,27 +57,30 @@ const NoteRow = ({ title, description, time, idx, fetchData }) => {
           <span className="text-gray-500 text-">{formatDate(time)}</span>
         </div>
       </div>
-      {/* body of the note */}
+
       <Link to={`${idx}`} className="w-full py-3 px-2">
         <h3 className="text-wrap text-xl">{wordLimit(description)}</h3>
       </Link>
-      {/* popup */}
+   
       <div
         ref={popupRef}
-        className={`absolute z-50 py-5 bg-white border transition-all border-black/10 w-[100px] h-[150px] rounded-2xl md:-right-20 top-8 sm:right-16 flex flex-col justify-between items-center ${
+        className={`absolute z-50 py-5 transition-all w-[100px] h-[150px] rounded-2xl md:-right-20 top-8 sm:right-16 flex flex-col justify-between items-center ${
           hidePopUp ? "hidden" : ""
         }`}
       >
-        {/* Your popup content here */}
+
         <div
           className="bg-red-400 hover:bg-red-500 w-[40px] h-[40px] flex transition-colors justify-center items-center rounded-full"
           onClick={() => deleteNoteById(idx)}
         >
           <Trash2 size={23} color="white" />
         </div>
-        <div className="bg-[#535bf2be] hover:bg-[#535bf2] w-[40px] h-[40px] flex transition-colors justify-center items-center rounded-full">
+        <Link
+          to={`${idx}/edit`}
+          className="bg-[#535bf2be] hover:bg-[#535bf2] w-[40px] h-[40px] flex transition-colors justify-center items-center rounded-full"
+        >
           <SquarePen size={23} color="white" />
-        </div>
+        </Link>
       </div>
     </div>
   );
