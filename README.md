@@ -39,6 +39,7 @@ src/
 ├── main.jsx
 └── index.css
 
+
 1. **Clone the repository**
 
 ```bash
