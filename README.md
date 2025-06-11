@@ -29,6 +29,7 @@ The **Note Web App** is a simple and intuitive web-based application built with 
 
 ## 📁 Project Structure
 
+```bash
 src/
 ├── components/
 │   └── [Reusable Components]
@@ -38,6 +39,7 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
+
 
 
 1. **Clone the repository**
