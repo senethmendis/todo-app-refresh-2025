@@ -3,9 +3,8 @@ import { addNewNote } from "../services";
 
 const HomePage = () => {
   const { register, handleSubmit, reset } = useForm();
-
+  
   const handleOnSubmit = (formData) => {
-
     addNewNote(formData.noteName, formData.note);
     reset();
   };

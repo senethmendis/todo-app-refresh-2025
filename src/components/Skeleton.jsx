@@ -1,12 +1,11 @@
 const Skeleton = () => {
-
   const color = "bg-gray-300/50";
+  
   return (
     <>
       <Paragraph color={color} />
       <Paragraph color={color} />
       <Paragraph color={color} />
-      
     </>
   );
 };

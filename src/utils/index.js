@@ -1,7 +1,7 @@
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
-
   const day = date.getDate();
+  
   const monthNames = [
     "January",
     "February",

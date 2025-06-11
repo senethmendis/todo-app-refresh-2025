@@ -1,7 +1,6 @@
-import { SquarePen } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { supabase } from "../services";
 import { formatDate } from "../utils";
 import { toast } from "react-toastify";

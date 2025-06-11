@@ -41,12 +41,12 @@ const NoteRow = ({ title, description, time, idx, fetchData }) => {
     <div className="w-full bg-white shadow p-4 rounded-2xl mb-5 relative hover:scale-[101%] transition-all ease-in-out">
       <div className="flex gap-2.5 items-center">
         <Calendar1 size={50} />
-        <div className="w-full">
+        <div className="w-full flex flex-col">
           <div className="w-full flex flex-row justify-between">
             <h1 className="text-2xl font-bold ">{title}</h1>
             <div
               onClick={(e) => {
-                e.stopPropagation(); // prevent bubbling up
+                e.stopPropagation();
                 setHidePopUp((prev) => !prev);
               }}
               className="w-[40px] h-[40px] bg-gray-100/80 hover:bg-gray-200/70 flex justify-center items-center rounded-full"
