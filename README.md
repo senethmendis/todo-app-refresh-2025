@@ -4,7 +4,7 @@ The **Note Web App** is a simple and intuitive web-based application built with 
 
 ---
 
-![dp](https://github.com/senethmendis/fake-apple-website/blob/main/public/Screenshot%202024-07-28%20144130%20(1).png)
+![dp](https://github.com/senethmendis/todo-app-refresh-2025/blob/main/ss.png)
 
 ## 🚀 Features
 
