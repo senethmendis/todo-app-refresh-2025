@@ -30,23 +30,26 @@ The **Note Web App** is a simple and intuitive web-based application built with 
 ## 📁 Project Structure
 
 ```bash
-src/
-├── components/
-│   └── [Reusable Components]
-├── pages/
-│   ├── EditNotePage.jsx
-│   └── CreateNotePage.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
-
-
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/your-username/note-web-app.git
-cd note-web-app
+.
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/          # Images, fonts, or static files
+│   ├── components/      # Reusable UI components
+│   ├── constants/       # Constant values (e.g., static labels or enums)
+│   ├── pages/           # Page-level components like EditNotePage, etc.
+│   ├── services/        # API calls or data handling logic
+│   ├── utils/           # Utility/helper functions
+│   ├── App.jsx          # Root App component
+│   ├── index.css        # Global styles
+│   └── main.jsx         # Vite entry point
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js      # Vite configuration file
 
 
 
